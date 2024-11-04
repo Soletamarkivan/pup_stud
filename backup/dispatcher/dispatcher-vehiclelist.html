@@ -1,0 +1,445 @@
+<!Doctype html>
+<html lang="en">
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        
+        <!--Links-->
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/search.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/action-buttons.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/buttons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+        <title>Vehicle List</title>
+    </head>
+
+    <body id="page-top">
+        <div id="wrapper">
+            <!-- Sidebar -->
+            <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+                <div class="container-fluid d-flex flex-column p-0">
+                    <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                        <div class="sidebar-brand-icon rotate-n-15"></div>
+                        <div class="sidebar-brand-text mx-3"><span>GEARCHANIX</span></div>
+                    </a>
+                    <hr class="sidebar-divider my-0">
+                    <ul class="navbar-nav text-light" id="accordionSidebar">
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/dispatcher.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/dispatcher-vehiclelist.html"><i class="fas fa-list"></i><span>VEHICLE LIST</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/dispatcher/latest-inspection.html"><i class="fas fa-check-circle"></i><span>LATEST INSPECTION</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/vehicle-reservation.html"><i class="fas fa-table"></i><span>VEHICLE RESERVATION</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/trip-ticket.html"><i class="fas fa-bus"></i><span>TRIP TICKET</span></a></li>
+                        <li class="nav-item">
+                            <a class="nav-link collapsed" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/dispatcher-history.html" data-bs-toggle="collapse" data-bs-target="#collapseHistory" aria-expanded="false" aria-controls="collapseHistory">
+                                <i class="fas fa-history"></i><span>HISTORY</span>
+                            </a>
+                            <div id="collapseHistory" class="collapse" aria-labelledby="headingHistory" data-bs-parent="#accordionSidebar">
+                                <div class="bg-white py-2 collapse-inner rounded">
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/history_reservation.html"><i class="fas fa-table"></i> VEHICLE RESERVATION</a>
+                                    <a class="collapse-item" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/dispatcher/history_trip.html"><i class="fas fa-bus"></i> VEHICLE TRIP TICKET</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--Content Wrapper-->
+            <div class="d-flex flex-column" id="content-wrapper">
+                <div id="content">
+                    <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                        <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                            <ul class="navbar-nav flex-nowrap ms-auto">
+                                <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                    <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                        <form class="me-auto navbar-search w-100">
+                                            <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                                <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </li>
+                                <!--Profile-->
+                                <div class="d-none d-sm-block topbar-divider"></div>
+                                <li class="nav-item dropdown no-arrow">
+                                    <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">Dispatcher</span><img class="border rounded-circle img-profile" src="assets/img/avatars/example.jpg"></a>
+                                        <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                            <a class="dropdown-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/dispatcher/profile-dispatcher.html"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/login-reg/logout.php">
+                                                <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--Scrollable Container-->
+                    <div class="scrollable-container">
+                        <div class="container-fluid">
+                            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                                <h3 class="text-dark mb-0">Vehicle List</h3>
+                            </div>
+                            <div class="row align-items-center">
+                                <!-- Search bar -->
+                                <div class="col d-flex justify-content-center">
+                                    <form class="navbar-search">
+                                        <div class="input-group">
+                                            <input class="form-control search-input" type="text" placeholder="Search">
+                                            <button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </form>                                                                      
+                                </div> 
+                                <!-- Export and action buttons -->
+                                <div class="col-auto d-flex align-items-center justify-content-end">
+                                    <button class="btn btn-light btn-sm mx-1" id="addBtn" title="Add"><i class="fas fa-plus"></i></button>
+                                    <a class="btn btn-primary btn-sm ms-3" role="button" data-bs-toggle="modal" data-bs-target="#exportModal">
+                                        <i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Report
+                                    </a>
+                                </div>
+                                <!-- Export Modal -->
+                                <div class="modal fade" id="exportModal" tabindex="-1" aria-labelledby="exportModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exportModalLabel">Select Columns, Month(s), and Year</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="exportForm" action="export_d_vehiclelist.php" method="GET" target="exportFrame">
+                                                    <div class="mb-3">
+                                                        <div style="text-align: center;">
+                                                            <label class="form-label">Select Columns to Include</label><br>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <input type="checkbox" id="vehicle_status" name="columns[]" value="vehicle_status">
+                                                                <label for="vehicle_status">Vehicle Status</label><br>
+                                                                <input type="checkbox" id="vehicle_name" name="columns[]" value="vehicle_name">
+                                                                <label for="vehicle_name">Vehicle Name</label><br>
+                                                                <input type="checkbox" id="vehicle_model" name="columns[]" value="vehicle_model">
+                                                                <label for="vehicle_model">Vehicle Model</label><br>
+                                                                <input type="checkbox" id="vehicle_year" name="columns[]" value="vehicle_year">
+                                                                <label for="vehicle_year">Vehicle Year</label><br>
+                                                                <input type="checkbox" id="vehicle_vin" name="columns[]" value="vehicle_vin">
+                                                                <label for="vehicle_vin">VIN</label><br>
+                                                                <input type="checkbox" id="vehicle_type" name="columns[]" value="vehicle_type">
+                                                                <label for="vehicle_type">Vehicle Type</label><br>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <input type="checkbox" id="plate_num" name="columns[]" value="plate_num">
+                                                                <label for="plate_num">Plate Number</label><br>
+                                                                <input type="checkbox" id="lifespan" name="columns[]" value="lifespan">
+                                                                <label for="lifespan">Lifespan</label><br>
+                                                                <input type="checkbox" id="current_meter" name="columns[]" value="current_meter">
+                                                                <label for="current_meter">Current Meter</label><br>
+                                                                <input type="checkbox" id="pms_date" name="columns[]" value="pms_date">
+                                                                <label for="pms_date">PMS Date</label><br>
+                                                                <input type="checkbox" id="vehicle_remarks" name="columns[]" value="vehicle_remarks">
+                                                                <label for="vehicle_remarks">Remarks</label><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="year" class="form-label">Year</label>
+                                                        <input type="number" id="year" name="year" class="form-control" required>
+                                                    </div>
+                                                    
+                                                    <div class="mb-3">
+                                                        <label for="format" class="form-label">Export Format</label>
+                                                        <select id="format" name="format" class="form-control" required>
+                                                            <option value="pdf">PDF</option>
+                                                            <option value="word">Word</option>
+                                                            <option value="excel">Excel</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" form="exportForm" class="btn btn-primary">Export</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow" style="margin-top: 30px">
+                                <div class="card-header py-3">
+                                    <p class="text-primary m-0 fw-bold">Vehicle Info</p>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6 text-nowrap">
+                                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                                                <label class="form-label">Show&nbsp;
+                                                    <select id="rowLimit" class="d-inline-block form-select form-select-sm">
+                                                        <option value="0" selected="">Select</option>
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="15">15</option>
+                                                        <option value="20">20</option>
+                                                        <option value="25">25</option>
+                                                        <option value="30">30</option>
+                                                        <option value="40">40</option>
+                                                        <option value="50">50</option>
+                                                    </select>&nbsp;
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                                        <table class="table my-0" id="dataTable">
+                                            <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Name</th>
+                                                    <th>Model</th>
+                                                    <th>Year</th>
+                                                    <th>VIN</th>
+                                                    <th>Type</th>
+                                                    <th>Plate Number</th>
+                                                    <th>Lifespan</th>
+                                                    <th>Current Meter</th>
+                                                    <th>PMS Date</th>
+                                                    <th>Remarks</th>
+                                                    <th>Actions</th> 
+                                                </tr>
+                                            </thead>
+                                            <tbody id="vehicle-data"> 
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 align-self-center">
+                                            <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                <ul class="pagination">
+                                                    <li class="page-item disabled"><a class="page-link" aria-label="Previous" href="#"><span aria-hidden="true">«</span></a></li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item"><a class="page-link" aria-label="Next" href="#"><span aria-hidden="true">»</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+                <!-- Add Vehicle Modal -->
+                <div class="modal fade" id="addVehicleModal" tabindex="-1" aria-labelledby="addVehicleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addVehicleModalLabel">Add New Vehicle</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addVehicleForm" method="POST" action="">
+                                    <div class="mb-3">
+                                        <label for="vehicle_name" class="form-label">Vehicle Name</label>
+                                        <input type="text" class="form-control" id="vehicle_name" name="vehicle_name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="vehicle_model" class="form-label">Vehicle Model</label>
+                                        <input type="text" class="form-control" id="vehicle_model" name="vehicle_model" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="vehicle_year" class="form-label">Vehicle Year</label>
+                                        <input type="number" class="form-control" id="vehicle_year" name="vehicle_year" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="vehicle_vin" class="form-label">Vehicle VIN</label>
+                                        <input type="text" class="form-control" id="vehicle_vin" name="vehicle_vin">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="vehicle_type" class="form-label">Vehicle Type</label>
+                                        <select class="form-select" id="vehicle_type" name="vehicle_type" required>
+                                            <option value="Bus">Bus</option>
+                                            <option value="Car">Car</option>
+                                            <option value="Motor">Motor</option>
+                                            <option value="Mini Bus">Mini Bus</option>
+                                            <option value="Van">Van</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="plate_num" class="form-label">Plate Number</label>
+                                        <input type="text" class="form-control" id="plate_num" name="plate_num" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="lifespan" class="form-label">Lifespan</label>
+                                        <input type="number" class="form-control" id="lifespan" name="lifespan" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="current_meter" class="form-label">Current Meter</label>
+                                        <input type="number" class="form-control" id="current_meter" name="current_meter" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="vehicle_status" class="form-label">Vehicle Status</label>
+                                        <select class="form-select" id="vehicle_status" name="vehicle_status" required>
+                                            <option value="Available">Available</option>
+                                            <option value="Scheduled">Scheduled</option>
+                                            <option value="Under Maintenance">Under Maintenance</option>
+                                            <option value="Inactive">Inactive</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save Vehicle</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Success Modal for Addition -->
+                <div class="modal fade" id="addSuccessModal" tabindex="-1" aria-labelledby="addSuccessModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="addSuccessModalLabel">Success</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Vehicle added successfully.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Edit Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit Vehicle</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form id="editVehicleForm" enctype="multipart/form-data">
+                                <div class="modal-body">
+                                    <input type="hidden" id="editVehicleID" name="vehicle_ID">
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label for="editVehicleName">Vehicle Name</label>
+                                            <input type="text" class="form-control" id="editVehicleName" name="vehicle_name" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editVehicleModel">Vehicle Model</label>
+                                            <input type="text" class="form-control" id="editVehicleModel" name="vehicle_model" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editVehicleYear">Vehicle Year</label>
+                                            <input type="number" class="form-control" id="editVehicleYear" name="vehicle_year" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label for="editVehicleVin">VIN</label>
+                                            <input type="text" class="form-control" id="editVehicleVin" name="vehicle_vin" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editVehicleType">Type of Vehicle</label>
+                                            <select class="form-control" id="editVehicleType" name="vehicle_type" required>
+                                                <option value="Bus">Bus</option>
+                                                <option value="Car">Car</option>
+                                                <option value="Motor">Motor</option>
+                                                <option value="Mini Bus">Mini Bus</option>
+                                                <option value="Van">Van</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editPlateNum">Plate Number</label>
+                                            <input type="text" class="form-control" id="editPlateNum" name="plate_num" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-4">
+                                            <label for="editLifespan">Lifespan</label>
+                                            <input type="number" class="form-control" id="editLifespan" name="lifespan" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editCurrentMeter">Current Meter</label>
+                                            <input type="number" class="form-control" id="editCurrentMeter" name="current_meter" required>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label for="editRemarks">Remarks</label>
+                                            <input type="text" class="form-control" id="editRemarks" name="vehicle_remarks">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- Delete Confirmation Modal -->
+                <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="deleteModalLabel">Confirm Deletion</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete this vehicle?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Success Modal for Deletion -->
+                <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="successModalLabel">Success</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Vehicle deleted successfully.
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+                <footer class="bg-white sticky-footer">
+                    <div class="container my-auto">
+                        <div class="text-center my-auto copyright"><span>Copyright © Gearchanix 2024</span></div>
+                    </div>
+                </footer>
+            </div>
+        </div> 
+
+        <!--Scripts-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/table.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/vehiclelist_d.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/bs-init.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/theme.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/scroll.js"></script>  
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/export.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    </body>     
+</html>

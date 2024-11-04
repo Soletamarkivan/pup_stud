@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Documents</title>
+    
+    <!-- Links -->
+    <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+    <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    
+    <style>
+        .report-button {
+            background-color: #9E0F12; /* Button color */
+            color: white; /* Text color */
+            width: 100%; /* Make the buttons fill the column */
+            margin: 10px 0; /* Margin between buttons */
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns */
+            gap: 10px; /* Gap between buttons */
+            margin: 30px; /* Margin around the grid */
+        }
+        .pdf-viewer {
+            margin-top: 20px; 
+            height: 900px; 
+            border: 1px solid #ccc; 
+            width: 100%; 
+        }
+        .file-viewer {
+            display: none; /* Hidden by default */
+            width: 100%;
+            height: 900px; /* Height for file previews */
+            border: 1px solid #ccc; /* Border for the viewer */
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body id="page-top">
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span>GEARCHANIX</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/admin-clerk/admin-clerk.html"><i class="fas fa-tachometer-alt"></i><span>DASHBOARD</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/admin-clerk/ac-vehiclelist.html"><i class="fas fa-list"></i><span>VEHICLE LIST</span></a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/admin-clerk/ac-documents.html"><i class="fas fa-table"></i><span>DOCUMENTS</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div class="shadow-lg" id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <button class="btn btn-link d-md-none rounded-circle me-3" id="sidebarToggleTop" type="button"><i class="fas fa-file-export"></i></button>
+                        <ul class="navbar-nav flex-nowrap ms-auto">
+                            <li class="nav-item dropdown d-sm-none no-arrow">
+                                <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                                <div class="dropdown-menu dropdown-menu-end p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                                    <form class="me-auto navbar-search w-100">
+                                        <div class="input-group">
+                                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li class="nav-item dropdown no-arrow">
+                                <div class="nav-item dropdown no-arrow">
+                                    <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">
+                                        <span class="d-none d-lg-inline me-2 text-gray-600 small">Admin Clerk</span>
+                                        <img class="border rounded-circle img-profile" src="assets/img/avatars/example.jpg">
+                                    </a>
+                                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                                        <a class="dropdown-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/admin-clerk/profile-adminclerk.html">
+                                            <i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/login-reg/logout.php">
+                                            <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!--Scrollable Container-->
+                <div class="scrollable-container">
+                    <div class="container-fluid">
+                        <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                            <h3 class="text-dark mb-0">Documents</h3>
+                        </div>
+                        <div class="card shadow" style="margin-top: 30px">
+                            <div class="card-header py-3">
+                                <p class="text-primary m-0 fw-bold">Document Files</p>
+                            </div>
+                            <div class="card shadow" style="margin: 30px 0;">
+                                <div class="button-grid">
+                                    <!-- Report Buttons -->
+                                    <button class="btn report-button" onclick="showPDF('path/to/maintenance-request.pdf')">MAINTENANCE REQUEST</button>
+                                    <button class="btn report-button" onclick="showExcel('/Gearchanix/GEARCHANIX-main/gearchanix/src/documents/Purchase-Request-Form.xlsx')">PURCHASE REQUEST FORM</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/repair-form.pdf')">REPAIR FORM</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/pre-departure-inspection.pdf')">PRE-DEPARTURE INSPECTION</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/petty-cash.pdf')">PETTY CASH</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/passenger-manifest.pdf')">PASSENGER MANIFEST</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/waste-material.pdf')">WASTE MATERIAL</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/gas-consumption.pdf')">GAS CONSUMPTION</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/trip-ticket.pdf')">TRIP TICKET</button>
+                                    <button class="btn report-button" onclick="showPDF('/Gearchanix/GEARCHANIX-main/gearchanix/src/documents/Nature of Schedule of Repair.pdf')">NATURE OF REPAIR</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/gas-consumption.pdf')">MARKET SURVEY</button>
+                                    <button class="btn report-button" onclick="showPDF('path/to/trip-ticket.pdf')">new</button>
+                                    <button class="btn report-button" onclick="showWord('path/to/sample-document.docx')">WORD DOCUMENT</button> <!-- Example Word button -->
+                                </div>
+                                <div class="card shadow" style="margin-top: 30px">
+                                    <div class="card-header py-3">
+                                        <p class="text-primary m-0 fw-bold">Document Preview</p>
+                                    </div>
+                                    <div class="card shadow" style="margin: 30px 0;">
+                                        <iframe id="pdf-viewer" class="pdf-viewer" src="" frameborder="0"></iframe>
+                                        <div id="excel-viewer" class="file-viewer"></div> <!-- Excel viewer -->
+                                        <div id="word-viewer" class="file-viewer"></div> <!-- Word viewer -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="bg-white sticky-footer">
+                    <div class="container my-auto">
+                        <div class="text-center my-auto copyright"><span>Copyright © GEARCHANIX 2024</span></div>
+                    </div>
+                </footer>
+            </div>
+            <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/script.js"></script>
+    <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
+    <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+
+    <!-- Include SheetJS and Mammoth.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+
+    <script>
+        function showPDF(pdfPath) {
+            document.getElementById('pdf-viewer').src = pdfPath;
+            document.getElementById('pdf-viewer').style.display = 'block'; // Show PDF viewer
+            document.getElementById('excel-viewer').style.display = 'none'; // Hide Excel viewer
+            document.getElementById('word-viewer').style.display = 'none'; // Hide Word viewer
+        }
+
+        function showExcel(filePath) {
+            var excelViewer = document.getElementById('excel-viewer');
+            excelViewer.style.display = 'block'; // Show Excel viewer
+            excelViewer.innerHTML = ""; // Clear previous content
+
+            fetch(filePath)
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    var workbook = XLSX.read(data);
+                    var html = XLSX.write(workbook, { sheet: workbook.SheetNames[0], type: 'binary', bookType: 'html' });
+                    excelViewer.innerHTML = html;
+                });
+            
+            document.getElementById('pdf-viewer').style.display = 'none'; // Hide PDF viewer
+            document.getElementById('word-viewer').style.display = 'none'; // Hide Word viewer
+        }
+
+        function showWord(filePath) {
+            var wordViewer = document.getElementById('word-viewer');
+            wordViewer.style.display = 'block'; // Show Word viewer
+            wordViewer.innerHTML = ""; // Clear previous content
+
+            fetch(filePath)
+                .then(response => response.arrayBuffer())
+                .then(data => {
+                    return mammoth.convertToHtml({ arrayBuffer: data });
+                })
+                .then(result => {
+                    wordViewer.innerHTML = result.value; // Insert the converted HTML into the viewer
+                });
+
+            document.getElementById('pdf-viewer').style.display = 'none'; // Hide PDF viewer
+            document.getElementById('excel-viewer').style.display = 'none'; // Hide Excel viewer
+        }
+    </script>
+</body>
+</html>

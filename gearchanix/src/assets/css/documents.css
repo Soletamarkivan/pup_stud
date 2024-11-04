@@ -1,0 +1,24 @@
+.report-button {
+    background-color: #9E0F12; 
+    color: white; 
+    width: 100%; 
+    margin: 10px 0; 
+    border: none; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.report-button:hover {
+    background-color: #df2124; 
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    margin: 30px; 
+}
+
+.button-grid:hover {
+    color: white;
+}

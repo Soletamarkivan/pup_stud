@@ -1,0 +1,175 @@
+/*Vehicle History buttons*/
+.btn-pdi, .btn-pms, .btn-ems, .btn-trip {
+    width: 50px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 40px;
+}
+
+/*PDI Colors*/
+.btn-pdi {
+    background: #33AB15;
+}
+
+.btn-pms {
+    background: #CEE927;
+}
+
+.btn-ems {
+    background: #9E0F12;
+}
+
+.btn-trip {
+    background: #279DC3;
+}
+
+.btn-latest-inspection, .btn-trip-ticket {
+    width: 50px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-latest-inspection {
+    background: #33AB15;
+}
+
+.btn-trip-ticket {
+    background: #9E0F12;
+}
+
+.btn-group-custom {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 181px;
+    margin-bottom: 181px;
+}
+
+.btn-service-task, .btn-service-reminder {
+    width: 50px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.btn-service-task { 
+    background: #33AB15;
+}
+
+.btn-service-reminder {
+    background: #9E0F12;
+}
+
+.btn-sched-maintenance, .btn-work-order {
+    width: 50px;
+    height: 180px;
+    margin: 30px;
+    border-radius: 15px !important;
+    font-size: 50px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.btn-sched-maintenance {
+    background: #33AB15;
+}
+
+.btn-work-order {
+    background: #9E0F12;
+}
+
+/*For the Add Button*/
+.btn-custom-yellow {
+    background-color: #FFC107; /* Customize the yellow shade */
+    color: white; /* Set text color to white */
+}
+
+.btn-custom-yellow:hover {
+    background-color: #e0a800; /* Darken on hover */
+    color: white;
+}
+
+/* Additional styles for the password input and eye icon */
+.password-container {
+    position: relative;
+}
+
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%; 
+    padding-left: 40px; 
+    padding-right: 20px; 
+}
+
+.eye-icon {
+    /*position: absolute;
+    top: 50%; 
+    left: 10px; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    font-size: 1.2em; */
+    color: #666; 
+    float: right;
+    margin-top: -25px;
+    margin-right: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+/*Validation*/
+#validation_box {
+    display: none;
+    
+    color: #000;
+    position: relative;
+    padding: 10px;
+    margin-top: 4px;
+    text-align: left;
+}
+
+h4 {
+    font-size: 15px;
+    margin: 20px 0px;
+}
+
+#validation_box p {
+    font-size: 14px;
+}
+
+.valid {
+    color: #7fcf35;
+}
+
+.valid::before {
+    position: relative;
+    left: -8px;
+    content: url(true.png);
+}
+
+.invalid {
+    color: #686868;
+}
+
+invalid::before {
+    position: relative;
+    left: 8px;
+    top: 3px;
+    content: url(false.png);
+}
+
+
+

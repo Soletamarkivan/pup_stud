@@ -1,0 +1,65 @@
+button {
+    margin-right: 5px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+} 
+
+/* Container for the buttons */
+.btn{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around; 
+}
+
+/*Edit button: hover*/
+button.btn-edit:hover i {
+    color: #ffa500 !important; 
+}
+
+/*Edit button: pressed*/
+button.btn-edit:active i {
+    color: #ff8c00 !important; 
+}
+
+/*Delete button: hover*/
+button.btn-delete:hover i {
+    color: #ff6666 !important; 
+}
+
+/*Delete button: pressed*/
+button.btn-delete:active i {
+    color: #cc0000 !important; 
+}
+
+/*Move to history: hover*/
+button.btn-move-history:hover i {
+    color: #cece71 !important; 
+}
+
+/*Move to history: pressed*/
+button.btn-move-history:active i {
+    color: #ffcc00 !important; 
+}
+
+.status-dropdown {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px !important;
+}
+
+.status-dropdown .status-pending {
+    background-color: #f0ad4e !important; /* Orange */
+    color: white !important;
+}
+
+.status-dropdown .status-approved {
+    background-color: #5cb85c !important; /* Green */
+    color: white !important;
+}
+
+.status-dropdown .status-rejected {
+    background-color: #d9534f !important; /* Red */
+    color: white;
+}

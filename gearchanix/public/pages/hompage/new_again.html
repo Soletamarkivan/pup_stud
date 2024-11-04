@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    
+    <!-- Links -->
+    <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+    <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+    <title>Gearchanix</title>
+    <style>
+        /* Custom Styles for About Us Section */
+        .about-card {
+            background-color: #9E0F12; /* Default color */
+            color: white; /* Text color */
+            transition: background-color 0.3s; /* Smooth transition */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px; /* Padding inside the card */
+            margin: 10px; /* Margin around the card */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+        }
+        
+        .about-card:hover {
+            background-color: #df2124; /* Hover color */
+        }
+
+        /* Heading Color for About Us */
+        .section-title {
+            color: #FFDF00; /* Same color as "Welcome" */
+            font-size: 2rem; /* Adjust as necessary */
+            margin-bottom: 20px; /* Spacing below title */
+        }
+
+        /* Contact Text Color */
+        .contact-text {
+            color: #fff; /* Same color as home descriptions */
+            font-size: 1rem; /* Adjust size to match */
+            margin: 5px 0; /* Spacing between lines */
+        }
+
+        /* Footer Color */
+        .footer {
+            background-color: #333; /* Darker footer background */
+        }
+
+        /* Responsive margins for mobile devices */
+        @media (max-width: 768px) {
+            .about-card {
+                margin: 5px; /* Smaller margin on mobile */
+            }
+        }
+    </style>
+</head>
+
+<body id="page-top" style="background-image: url('/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/img/pup motor pool formatted.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="d-flex flex-column min-vh-100">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-custom shadow mb-4 topbar static-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <img src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/img/PUPLogo.png" alt="PUP Logo">
+                        <div class="ms-3">
+                            <span class="d-block univ-name">Polytechnic University of the Philippines</span>
+                            <span class="d-block sub-text">The Country's 1st PolytechnicU</span>
+                        </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <!-- Navigation --> 
+                            <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about">About Us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact">Contact Us</a>
+                                </li>
+                            </ul>
+                            <!-- Login Button -->
+                            <a href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/login-reg/login.html" class="btn right-links">LOGIN</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content flex-grow-1">
+            <section id="home" class="text-center my-5">
+                <div class="intro text-center">
+                    <span class="welcome">Welcome To</span>
+                    <span class="pup">PUP Motor Pool</span>
+                    <h5>PUP Motor Pool is the organization that manages all the vehicles used by</h5>
+                    <h5>PUP Main Campus and Branches. Their primary concern is the maintenance</h5>
+                    <h5>of the PUP vehicles to maintain its working condition.</h5>
+                
+                    <!--Reserve Button-->
+                    <div class="reserve">
+                        <a href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/public/pages/client/reserve-calendar.html">
+                            <button class="btn btn-reserve">RESERVE</button>
+                        </a>
+                    </div>
+                </div>    
+            </section>
+
+            <section id="about" class="container my-5">
+                <h2 class="section-title text-center">About Us</h2>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <div class="card mb-4 about-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Mission</h5>
+                                <p class="card-text">To provide reliable and safe transportation for all PUP constituents, ensuring the utmost care for every vehicle.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-4 about-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Vision</h5>
+                                <p class="card-text">To be a leader in efficient vehicle management, setting the standard for service excellence in transportation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Scroll to Top Button -->
+        <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>     
+
+        <!-- Footer -->
+        <footer class="footer text-white mt-auto py-3" style="background-color: #161515;">
+            <div class="container d-flex justify-content-between align-items-center text-center">
+                <div class="footer-info">
+                    <p class="mb-0">© 2024 GEARCHANIX. All rights reserved. | PUP Motor Pool, PUP Sta. Mesa Main, Manila, Philippines</p>
+                </div>
+                <div class="contact-info">
+                    <p class="mb-0 contact-text">Email: <a href="mailto:info@gearchanix.com" class="contact-text">info@gearchanix.com</a></p>
+                    <p class="mb-0 contact-text">Phone: <a href="tel:+1234567890" class="contact-text">+1 234 567 890</a></p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </footer>
+        
+    </div>
+</body>
+</html>

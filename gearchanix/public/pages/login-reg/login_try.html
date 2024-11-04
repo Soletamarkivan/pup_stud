@@ -1,0 +1,117 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        
+        <!-- Links -->
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/css/styles.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/css/buttons.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+        <title>Login</title>
+    </head>
+
+    <body id="page-top">
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <!-- Navbar -->
+                <nav class="navbar navbar-expand-lg navbar-custom shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <a class="navbar-brand d-flex align-items-center" href="#">
+                            <img src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/img/PUPLogo.png" alt="PUP Logo">
+                            <div class="ms-3">
+                                <span class="d-block univ-name">Polytechnic University of the Philippines</span>
+                                <span class="d-block sub-text">The Country's 1st PolytechnicU</span>
+                            </div>
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Main Page -->
+                <div class="container">
+                    <div class="card shadow-lg o-hidden border-0 my-5">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <!-- Left Section -->
+                                <div class="col-lg-5 d-none d-lg-flex flex-column align-items-center justify-content-center bg-maroon">
+                                    <div class="flex-grow-1 d-flex flex-column justify-content-center align-items-center text-center text-white p-4">
+                                        <h2>GEARCHANIX</h2>
+                                        <p>
+                                            Welcome to Gearchanix! It is a system used to help in management of vehicles in the PUP Motor Pool.
+                                            Clients from both internal and external can reserve a schedule for the use of vehicles offered by the University.
+                                        </p>
+                                        <a href="/Gearchanix/GEARCHANIX-main/gearchanix/public/pages/login-reg/register.html" class="btn btn-transparent">Create an Account</a>
+                                    </div>
+                                </div>
+
+                                <!-- Right Section (Login Form) -->
+                                <div class="col-lg-7">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <form class="user" action="login.php" method="POST">
+                                            <!-- Email -->
+                                            <div class="mb-3">
+                                                <input class="form-control form-control-user" type="email" name="email" aria-describedby="emailHelp" placeholder="Email Address" required>
+                                            </div>
+                                            <!-- Password -->
+                                            <div class="mb-3 password-container">
+                                                <div class="input-with-icon d-flex align-items-center">
+                                                    <input class="form-control form-control-user" type="password" id="password" placeholder="Password" name="password" required>
+                                                    <i class="fas fa-eye-slash eye-icon" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+                                                </div>
+                                            </div>
+                                            <!-- Remember Me -->
+                                            <div class="mb-3">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input class="form-check-input" type="checkbox" name="remember_me" id="formCheck-1">
+                                                    <label class="form-check-label" for="formCheck-1">Remember Me</label>
+                                                </div>
+                                            </div>
+                                            <!-- Login Button -->
+                                            <button class="btn btn-primary d-block btn-user w-100" type="submit">Login</button>
+                                        </form>
+
+                                        <!-- Links for Forgot Password and Register -->
+                                        <div class="text-center mt-4">
+                                            <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        </div>
+
+                                        <div id="validation_box">
+                                            <h4>Password Must Contain The Following</h4>
+                                            <p id="letter" class="invalid">Lowercase Letters</p>
+                                            <p id="capital" class="invalid">Uppercase Letters</p>
+                                            <p id="number" class="invalid">A Number</p>
+                                            <p id="length" class="invalid">At Least 8 Characters</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    <div class="container my-auto">
+                        <div class="text-center my-auto copyright"><span>Copyright © Gearchanix 2024</span></div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/bs-init.js"></script>
+        <script src="/Gearchanix/GEARCHANIX-MAIN/gearchanix/src/assets/js/theme.js"></script>     
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/validatepassword.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+        <script src="/Gearchanix/GEARCHANIX-main/gearchanix/src/assets/js/login.js"></script>
+    </body>
+</html>

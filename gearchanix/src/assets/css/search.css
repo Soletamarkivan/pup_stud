@@ -1,0 +1,30 @@
+.input-group {
+    position: relative;
+    width: 100%;
+}
+
+/*Search input*/
+.search-input {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 8px 40px 8px 10px; /* Adjust padding to make space for the icon */
+    width: 100%;
+    box-shadow: none;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: black;
+    outline: none;
+    box-shadow: none;
+}
+
+/*Search icon styles*/
+.search-icon {
+    position: absolute;
+    right: 10px; /* Distance from the right */
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically */
+    color: black; /* Icon color */
+    pointer-events: none; /* Prevent interaction with the icon */
+}
